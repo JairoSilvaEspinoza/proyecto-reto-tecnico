@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  proyecto-reto-tecnico:
+    build: .
+    container_name: proyecto-reto-tecnico
+    ports:
+      - "8080:8080"

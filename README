@@ -1,0 +1,35 @@
+# Proyecto Reto Técnico
+
+Microservicio desarrollado con Spring Boot (Java 8) y base de datos H2 embebida, dockerizado con Docker y Docker Compose.
+
+---
+
+## Descripción
+
+Este proyecto implementa un microservicio de ejemplo utilizando Spring Boot, con base de datos H2 embebida para pruebas y desarrollo. La aplicación está dockerizada para facilitar su despliegue y ejecución en cualquier entorno.
+
+---
+
+## Requisitos
+
+- [Java 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+- [Maven](https://maven.apache.org/)
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+---
+
+## Pasos para levantar el proyecto
+
+```bash
+# 1. Compilar y generar el JAR
+mvn clean install
+
+# 2. Generar la imagen Docker
+docker build -t proyecto-reto-tecnico .
+
+# 3. Levantar la aplicación con Docker al contenedor
+docker-compose up --build
+
+# 4. Opcional: levantar la aplicación con Docker directamente
+docker run -p 8080:8080 proyecto-reto-tecnico
