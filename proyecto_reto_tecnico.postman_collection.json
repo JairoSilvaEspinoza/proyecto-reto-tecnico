@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "3fa6b495-7d27-41a2-9c73-0e4b7768af19",
+		"name": "proyecto_reto_tecnico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40558420",
+		"_collection_link": "https://proyectox-1327.postman.co/workspace/proyecto_reto_tecnico~c523eb37-f8cf-45a0-865c-da7076627e4d/collection/40558420-3fa6b495-7d27-41a2-9c73-0e4b7768af19?action=share&source=collection_link&creator=40558420"
+	},
+	"item": [
+		{
+			"name": "registerClient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"uniqueCode\": \"1234567890\",\r\n  \"firstName\": \"Jairo\",\r\n  \"lastName\": \"Silva\",\r\n  \"documentType\": \"RUC\",\r\n  \"documentNumber\": \"1234U5\",\r\n  \"paymentBehavior\": \"CASH\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listClients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByUniqueCode",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clients/1234567899",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clients",
+						"1234567899"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateClient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Jairo\",\r\n  \"lastName\": \"Silva Espinoza\",\r\n  \"documentType\": \"DNI\",\r\n  \"documentNumber\": \"71862351\",\r\n  \"status\": \"ACTIVE\",\r\n  \"paymentBehavior\": \"CASH\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clients/1234567899",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clients",
+						"1234567899"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changeStatus",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clients/1234567899/status?status=INACTIVE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clients",
+						"1234567899",
+						"status"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "INACTIVE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validatePaymentBehavior",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uniqueCode\": \"1234567890\",\r\n    \"amount\": 50000000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clients/validate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clients",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listClientsByStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/clients/status?status=INACTIVE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clients",
+						"status"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "INACTIVE"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
